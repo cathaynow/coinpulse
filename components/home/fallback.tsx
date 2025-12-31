@@ -1,7 +1,5 @@
 import React from 'react';
 import DataTable from "@/components/DataTable";
-import {DataTableColumn} from "@/type.d";
-import {cn} from "@/lib/utils";
 
 export const CoinOverviewFallback = () => {
     return (
@@ -30,10 +28,6 @@ export const CoinOverviewFallback = () => {
 export const TrendingCoinsFallback = () => {
     const columns: DataTableColumn<any>[] = [
         {
-            header: '#',
-            cell: (_, index) => <div className="w-4 h-4 bg-dark-400 rounded-sm"/>,
-        },
-        {
             header: 'Name',
             cell: () => (
                 <div className="name-link">
@@ -44,11 +38,6 @@ export const TrendingCoinsFallback = () => {
             cellClassName: 'name-cell',
         },
         {
-            header: 'Price',
-            cell: () => <div className="price-line bg-dark-400 rounded-sm"/>,
-            cellClassName: 'price-cell',
-        },
-        {
             header: '24h Change',
             cell: () => (
                 <div className="price-change">
@@ -57,6 +46,11 @@ export const TrendingCoinsFallback = () => {
                 </div>
             ),
             cellClassName: 'change-cell',
+        },
+        {
+            header: 'Price',
+            cell: () => <div className="price-line bg-dark-400 rounded-sm"/>,
+            cellClassName: 'price-cell',
         },
     ];
 
